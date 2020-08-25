@@ -175,8 +175,8 @@
 % Configure styles for each CV elements
 % For fundamental structures
 \newcommand\nametext{18pt}
-\newcommand\largetext{14pt}
-\newcommand\mediumtext{11pt}
+\newcommand\largetext{12pt}
+\newcommand\mediumtext{10pt}
 \newcommand\smalltext{9pt}
 
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{\nametext}{1em}\headerfont\bfseries\color{text} #1}}
@@ -377,7 +377,7 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{1.5mm}
+\newcommand{\acvHeaderAfterNameSkip}{1mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
