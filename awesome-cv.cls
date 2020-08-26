@@ -426,11 +426,11 @@
 
     \headersocialstyle{%
       \ifthenelse{\isundefined{\@email}} {} {%
-        \@email
+        \href{mailto:\@email}{\@email}%
       }
       \\
       \ifthenelse{\isundefined{\@linkedin}} {} {%
-        linkedin.com/in/\@linkedin
+        \href{https://www.linkedin.com/in/\@linkedin}{linkedin.com/in/\@linkedin}%
       }
     }
   \end{multicols}
