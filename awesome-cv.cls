@@ -175,9 +175,9 @@
 % Configure styles for each CV elements
 % For fundamental structures
 \newcommand\nametext{18pt}
-\newcommand\largetext{12pt}
-\newcommand\mediumtext{10pt}
-\newcommand\smalltext{9pt}
+\newcommand\largetext{14pt}
+\newcommand\mediumtext{10.5pt}
+\newcommand\smalltext{9.5pt}
 
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{\nametext}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{\nametext}{1em}\headerfont\bfseries\color{text} #1}}
@@ -618,11 +618,21 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+    \ifempty{#5}
+      {%
+        \ifempty{#2#3}
+          {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+          {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+          \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      }
+      {%
+        \ifempty{#2#3}
+          {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+          {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+          \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+        \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+      }
+
   \end{tabular*}%
 }
 
@@ -691,12 +701,20 @@
   \vspace{-4.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0pt}
+    \setlength{\parskip}{0.5pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
   \end{justify}
   \vspace{-4.0mm}
+}
+
+\newenvironment{cvstackitems}{%
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0.5pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{%
+  \end{itemize}
 }
 
 
