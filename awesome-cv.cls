@@ -174,10 +174,10 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand\nametext{\fontsize{18pt}{1em}}
-\newcommand\largetext{\fontsize{14pt}{1em}}
-\newcommand\mediumtext{\fontsize{10.5pt}{1em}}
-\newcommand\smalltext{\fontsize{9.5pt}{1em}}
+\newcommand\nametext{\fontsize{18pt}{1.1em}}
+\newcommand\largetext{\fontsize{14pt}{1.1em}}
+\newcommand\mediumtext{\fontsize{12pt}{1.1em}}
+\newcommand\smalltext{\fontsize{10pt}{1.1em}}
 
 \newcommand*{\headerfirstnamestyle}[1]{{\nametext\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\nametext\headerfont\bfseries\color{text} #1}}
@@ -386,8 +386,8 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{1.5mm}
-\newcommand{\acvSectionContentTopSkip}{2mm}
+\newcommand{\acvSectionTopSkip}{4mm}
+\newcommand{\acvSectionContentTopSkip}{3mm}
 
 
 %-------------------------------------------------------------------------------
@@ -701,7 +701,7 @@
   \vspace{-4.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0.5pt}
+    \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
@@ -711,7 +711,7 @@
 
 \newenvironment{cvstackitems}{%
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0.5pt}
+    \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}

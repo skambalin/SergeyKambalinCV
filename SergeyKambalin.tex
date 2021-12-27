@@ -18,10 +18,11 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[12pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.5cm, top=1.5cm, right=1.5cm, bottom=2.0cm, footskip=.5cm}
+% \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[./fonts/]
@@ -75,6 +76,10 @@
 % \googlescholar{googlescholar-id}{}
 % \extrainfo{kambalin@gmail.com}
 
+% \lhead{Left of header}
+% \chead{center of header (on page \thepage)}
+% \rhead{Right of header}
+
 %-------------------------------------------------------------------------------
 \begin{document}
 
@@ -90,13 +95,16 @@
 %-------------------------------------------------------------------------------
 
 \input{sections/summary.tex}
-\input{sections/skills.tex}
 \input{sections/experience.tex}
+
+% \newpage
+
+\input{sections/skills.tex}
 \input{sections/education.tex}
 
-\vspace{-5.0mm}
+% \vspace{-5.0mm}
 
-% \input{sections/languages.tex}
+\input{sections/languages.tex}
 
 %-------------------------------------------------------------------------------
 \end{document}
