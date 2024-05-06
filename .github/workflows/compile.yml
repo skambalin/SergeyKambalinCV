@@ -4,26 +4,39 @@ on:
   push: {}
   pull_request: {}
 
+permissions:
+  contents: write
+  pull-requests: write 
+
 jobs:
-  build:
+  compile:
+    name: Compile CV
     runs-on: ubuntu-latest
     container: texlive/texlive:latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+    - uses: actions/checkout@master
+      name: Checkout repository
       with:
-        persist-credentials: false
         fetch-depth: 0
+
+    - name: Change ownership
+      run: chown -R $(whoami) .
 
     - name: Compile
       run: xelatex SergeyKambalin.tex
 
-    - name: Commit & Push changes
-      uses: actions-js/push@master
+    - name: Commit changes
+      run: |
+        git config --local user.email "kambalin@gmail.com"
+        git config --local user.name "Sergey Kambalin"
+        git commit -a -m "[skip ci] Auto-update CV"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        message: "Auto-compile CV: ${date}"
+        branch: ${{ github.ref }}
 
     - uses: actions/upload-artifact@v4
       name: Upload CV
