@@ -12,11 +12,21 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+        fetch-depth: 0
 
     - name: Compile
       run: xelatex SergeyKambalin.tex
 
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: "Auto-compile CV: ${date}"
+
     - uses: actions/upload-artifact@v4
+      name: Upload CV
       with:
         name: SergeyKambalin
         path: ./SergeyKambalin.pdf
