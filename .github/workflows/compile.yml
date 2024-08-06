@@ -1,8 +1,7 @@
 name: Compile CV
 
 on:
-  push: {}
-  pull_request: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
